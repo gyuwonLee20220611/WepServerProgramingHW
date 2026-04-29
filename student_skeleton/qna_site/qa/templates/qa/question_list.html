@@ -5,10 +5,14 @@ TODO: Bootstrap Card 스타일로 질문 목록을 표시하세요.
 {% extends 'qa/base.html' %}
 {% block content %}
 <h2>All Questions</h2>
-
+<!--
+제가 임의로 바꾼 부분입니다. 로그인을 안하면 Ask Question 버튼이 안보이게 가렸습니다.
+-->
+{% if user.is_authenticated %}
 <div class="d-flex justify-content-end mb-3">
     <a href="{% url 'ask_question' %}" class="btn btn-primary">Ask Question</a>
 </div>
+{% endif %}
 <!-- TODO: 반응형 2열 카드 레이아웃을 만드세요 -->
 <div class="row row-cols-1 row-cols-md-2 g-4">
 
